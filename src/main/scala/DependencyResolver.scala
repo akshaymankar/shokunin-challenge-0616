@@ -1,11 +1,11 @@
 object DependencyResolver {
-  def resolve(features: List[Feature], dependencies: List[Dependency]) = {
+  def resolve(features: Set[Feature], dependencies: Set[Dependency]) = {
     resolveLoop(features, dependencies, List())._3
   }
 
-  private def resolveLoop(features: List[Feature],
-                          dependencies: List[Dependency],
-                          executionOrder: List[List[Feature]]): (List[Feature], List[Dependency], List[List[Feature]]) = {
+  private def resolveLoop(features: Set[Feature],
+                          dependencies: Set[Dependency],
+                          executionOrder: List[Set[Feature]]): (Set[Feature], Set[Dependency], List[Set[Feature]]) = {
     if(features.isEmpty)
       return (features, dependencies, executionOrder)
 
