@@ -10,4 +10,6 @@ libraryDependencies += "org.scala-lang.modules" %% "scala-parser-combinators" % 
 resolvers += "scalaz-bintray" at "http://dl.bintray.com/scalaz/releases"
 
 scalacOptions in Test ++= Seq("-Yrangepos")
+
+mainClass in Compile := Some("Main")
     
